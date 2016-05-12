@@ -1,0 +1,27 @@
+<% Benchmark.bmbm do |x| %>
+    <% iterations = 10000 %>
+
+    <% x.report 'inline' do %>
+        <% iterations.times do %>
+            <p>text</p>
+        <% end %>
+    <% end %>
+
+    <% x.report 'partial' do %>
+        <% iterations.times do %>
+            <%= render partial: 'partial_testing/my_partial' %>
+        <% end %>
+    <% end %>
+
+    <% collection = iterations.times.collect { |_| 'text' } %>
+
+    <% x.report 'collection_partial_using_loop' do %>
+        <% collection.each do |item| %>
+            <%= render partial: 'partial_testing/collection_partial', locals: {item: item} %>
+        <% end %>
+    <% end %>
+
+    <% x.report 'collection_partial_using_option' do %>
+        <%= render partial: 'partial_testing/collection_partial', collection: collection, as: :item %>
+    <% end %>
+<% end %>
