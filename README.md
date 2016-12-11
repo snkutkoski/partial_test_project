@@ -1,6 +1,6 @@
 This project contains a simple Rails application that I use to perform benchmarking on partial rendering.
 
-The results obtained so far are outlined and described below. This benchmarking was done because I suspect that rendering partials in Rails is relativley slow. My experiments were based on [http://www.justinweiss.com/articles/how-much-time-does-rendering-a-partial-really-take/|this] blog post I read and wanted to verify. If the cost of a partial is high engough, I hope to create a "simpler partial" gem that bypasses a lot of the overhead that ActionView seems to have in its partial rendering but that still contains the most important features of partials, like local variables and access to helpers.
+The results obtained so far are outlined and described below. This benchmarking was done because I suspect that rendering partials in Rails is relativley slow. My experiments were based on [this](http://www.justinweiss.com/articles/how-much-time-does-rendering-a-partial-really-take/) blog post I read and wanted to verify. If the cost of a partial is high engough, I hope to create a "simpler partial" gem that bypasses a lot of the overhead that ActionView seems to have in its partial rendering but that still contains the most important features of partials, like local variables and access to helpers.
 
 |                                 | user     | system   | total      | real     |
 |---------------------------------|----------|----------|------------|----------|
